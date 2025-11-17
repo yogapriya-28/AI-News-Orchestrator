@@ -1,19 +1,4 @@
 # news_orchestrator_competition_pro.py
-"""
-AI News Orchestrator — Competition PRO (single-file Streamlit)
-- Aggregation: NewsAPI primary + Google News RSS fallback (real URL extraction)
-- Timeline: dedupe, chronological milestones
-- Analysis: NER (spaCy), fact extraction, conflicts, authenticity scoring
-- Advanced Analysis (Pro): Verified facts, source grades, bias/clickbait, story reconstruction
-- Multilingual summary: includes Tamil ('ta')
-- Exports: CSV/JSON/PNG; history via SQLite
-Notes:
- - Install optional libs for best experience: spaCy, en_core_web_sm, langdetect, googletrans, kaleido (for PNG)
- - Typical install:
-    pip install streamlit feedparser requests plotly python-dotenv nltk spacy langdetect googletrans==4.0.0rc1 tldextract dateparser
-    python -m spacy download en_core_web_sm
-    pip install kaleido
-"""
 # === Stdlib ===
 import os, re, json, sqlite3, math, urllib.parse, csv, sys
 from io import StringIO, BytesIO
@@ -1034,3 +1019,4 @@ Notes:
 - For timeline PNG export install `kaleido` (`pip install kaleido`).
 """)
 # End of file
+
