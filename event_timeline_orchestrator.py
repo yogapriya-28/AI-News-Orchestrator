@@ -85,18 +85,20 @@ try:
 except Exception:
     translator = None
 
-# OpenAI modern client (optional)
 openai_client = None
-try:
-    from openai import OpenAI
-    load_dotenv()
-    if os.getenv("OPENAI_API_KEY"):
-        openai_client = OpenAI()
-except Exception:
-    openai_client = None
+NEWS_API_KEY = ""
 
-# Load NEWS API key from .env if present
-NEWS_API_KEY = os.getenv("NEWS_API_KEY", "")
+# Load from Streamlit Cloud Secrets
+try:
+    OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+    NEWS_API_KEY = st.secrets["NEWS_API_KEY"]
+
+    from openai import OpenAI
+    openai_client = OpenAI(api_key=OPENAI_API_KEY)
+
+except Exception as e:
+    print("Secrets not loaded:", e)
+    openai_client = None
 
 # -------------------------
 # Config & weights
@@ -1034,3 +1036,4 @@ Notes:
 - For timeline PNG export install `kaleido` (`pip install kaleido`).
 """)
 # End of file
+
