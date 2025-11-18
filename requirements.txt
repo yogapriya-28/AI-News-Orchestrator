@@ -1,14 +1,5 @@
 streamlit
-feedparser
 requests
+feedparser
 python-dotenv
-nltk
-spacy
-langdetect
-googletrans==4.0.0rc1
-tldextract
-dateparser
 plotly
-numpy
-pandas
-kaleido
