@@ -1,5 +1,12 @@
 streamlit
-requests
 feedparser
-python-dotenv
+requests
 plotly
+python-dotenv
+nltk
+langdetect
+googletrans==4.0.0rc1
+tldextract
+dateparser
+kaleido
+openai
